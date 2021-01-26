@@ -15,7 +15,7 @@ date: 04/24
 pin:424
 
 # Status:
-Complete and deployed 
+Complete
 
 # Tech framework :
 ReactJS/JavaScript/Html/CSS
@@ -24,5 +24,5 @@ ReactJS/JavaScript/Html/CSS
 No bugs 
 
 # How to use it:
-First, clone the repo into your terminal and forward to the Heir_feet directory. Lastly,install yarn and run yarn start. 
+First, change directory to shop-fe. Then run NPM install. Lastly, run NPM start 
 
