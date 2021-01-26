@@ -9,6 +9,7 @@ export default function SignUp(props) {
        password:"",
        user_name:""
    })
+   const [loading,setLoading] = useState(false)
    const handleChange = e => {
        setUser({...user,
         [e.target.name]:e.target.value})
@@ -16,6 +17,7 @@ export default function SignUp(props) {
    }
    const handleSubmit = e => {
        e.preventDefault()
+       setLoading(true)
    Axios.post(`https://heir-shoes-be.herokuapp.com/register`,user).then(
        res => {
         
@@ -26,18 +28,30 @@ export default function SignUp(props) {
         localStorage.setItem(`id`,res.data.userid)
         props.history.push(`/home`)
         console.log(props)
-
+        setLoading(false)
        }
    )
 
        }
+      
    )
+   .catch(
+    err => {
+      setLoading(false)
+    }
+  )
 
    
 
 }
   return (
     <div>
+      {
+        loading 
+        ?
+<div class="loader"></div>
+  :
+
     <div className="main">
       <p className="sign" align="center">Sign Up</p>
       <form className="form1">
@@ -52,6 +66,7 @@ export default function SignUp(props) {
     {/* </a> */}
     </form>
     </div>
+      }
     </div>
   )
 }

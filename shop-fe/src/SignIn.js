@@ -8,6 +8,8 @@ export default function SignIn(props) {
        email:"",
        password:""
    })
+   const [loading,setLoading] = useState(false)
+
    const handleChange = e => {
        setUser({...user,
         [e.target.name]:e.target.value})
@@ -15,6 +17,7 @@ export default function SignIn(props) {
    }
    const handleSubmit = e => {
        e.preventDefault()
+       setLoading(true)
    Axios.post(`https://heir-shoes-be.herokuapp.com/login`,user).then(
        res => {
         localStorage.setItem(`email`,res.data.email)
@@ -22,9 +25,15 @@ export default function SignIn(props) {
         localStorage.setItem(`id`,res.data.userid)
         props.history.push(`/home`)
         console.log(props)
+        setLoading(false)
 
        }
    )
+   .catch(
+    err => {
+      setLoading(false)
+    }
+  )
 
    
 
