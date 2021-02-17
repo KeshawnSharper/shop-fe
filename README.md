@@ -6,6 +6,12 @@
 # Description : 
 A sneaker e-commerce site that uses Sneakerdatabase API, enabling users to shop from the biggest sneaker companies 
 
+# Credentials :
+Username:
+username
+Password:
+password
+
 # Functionality : 
 (Demo)
 Log in and sign up then search through shoes. Once an user has made their decision just order with  the following credit card credentials
