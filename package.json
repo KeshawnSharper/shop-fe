@@ -14,7 +14,7 @@
     "emailjs": "^3.3.0",
     "emailjs-com": "^2.6.3",
     "infinite-scroll": "^3.0.6",
-    "netlify-cli": "^2.65.6",
+    "netlify-cli": "^2.71.0",
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",

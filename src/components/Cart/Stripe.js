@@ -1,15 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import axios from "axios";
 import { connect } from "react-redux";
 // import { purchase } from "../actions/StoreActions";
 import { toast } from "react-toastify";
 import StripeCheckout from "react-stripe-checkout";
 import {removeCart} from '../../actions/actions'
-import emailjs from "emailjs-com";
 
 // toast.configure;
-const mapStateToProps = (state) => {
+const mapStateToProps = () => {
   return {
     cart: JSON.parse(localStorage.getItem("cart")).cart,
     total: localStorage.getItem("total")
@@ -28,17 +26,7 @@ function Stripe(props) {
   const [product] = React.useState({
     name: "tesla Roadster",
     price: Number((Number(localStorage.getItem("total")) + Number(4.99) + Number(localStorage.getItem("total") * 0.07)).toFixed(2))
-  });
-  function sendEmail(e) {
-    e.preventDefault();
-
-    emailjs.sendForm('gmail', 'template_1ggu0dg', e.target, 'user_wC0FdHgrUNZjZbH6r1PQU')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-  }
+  })
 const purchase = (order) => {
     axios.post("https://heir-shoes-be.herokuapp.com/orders", order).then((res) => {
       localStorage.setItem("total",0)

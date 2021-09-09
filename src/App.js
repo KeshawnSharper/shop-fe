@@ -1,15 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import {
     BrowserRouter as Router,
     Route,
-    NavLink,
     Switch,
-    Link,
-    withRouter
   } from "react-router-dom";
 //   import { Provider } from "./Components";
-import Header from './components/header/header'
 import Content from './components/content/content'
 import Search from './components/search/search'
 import Product from './components/Product/product'
@@ -17,19 +12,15 @@ import Cart from './components/Cart/cart'
 import Orders from './components/Orders/orders'
 import ProtectedRoute from './ProtectedRoute'
 
-import { connect } from "react-redux";
 import './styles.css'
 import Home from './home'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
-function App(props) {
+function App() {
    
   return (
     <div className="app">
     <Router>
-    
-        
-    
       <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/signin" component={SignIn} />

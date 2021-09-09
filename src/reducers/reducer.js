@@ -1,5 +1,4 @@
 import initState from "./initState";
-import RelatedSneakers from "../components/Product/relatedSneakers";
 
 export const StoreReducer = (state = initState, action) => {
   switch (action.type) {

@@ -4,13 +4,6 @@ import HeroImage from './hero-image'
 import styles from './content.module.css'
 
 import LabelIcon from '../icons/label'
-import Car from '../icons/car'
-import Home from '../icons/home'
-import Job from '../icons/job'
-import Phone from '../icons/phone'
-import Clothing from '../icons/clothing'
-import Headphone from '../icons/headphone'
-import Book from '../icons/book'
 import More from '../icons/more'
 import { Link } from "react-router-dom";
 import Header from '../header/header'
@@ -31,13 +24,13 @@ const Categories = () => (
     </div>
     <div className={styles.catList}>
       {[
-        { label: 'Nike', icon: <img src="https://img.icons8.com/ios/50/000000/nike.png"/> },
-        { label: 'Adidas', icon:<img src="https://img.icons8.com/windows/50/000000/adidas-trefoil.png"/>},
-        { label: 'Jordan', icon: <img src="https://img.icons8.com/ios-filled/50/000000/air-jordan.png"/> },
-        { label: 'New balance', icon: <img src="https://logos-download.com/wp-content/uploads/2016/02/New_Balance_black_logo.png" width="50" height="40"/> },
-        { label: 'Under Armour', icon:<img src="https://logos-download.com/wp-content/uploads/2016/09/Under_Armour_logo.png" width="40" height="40"/> },
-        { label: 'Reebok', icon: <img src="https://logos-download.com/wp-content/uploads/2016/02/Reebok_logo.png" width="100" height="40"/> },
-        { label: 'Puma', icon: <img src="https://www.logosurfer.com/wp-content/uploads/2018/03/puma-logo_0.png"  alt="Puma Logo" width="60" height="40"/> },
+        { label: 'Nike', icon: <img alt="" src="https://img.icons8.com/ios/50/000000/nike.png"/> },
+        { label: 'Adidas', icon:<img alt="" src="https://img.icons8.com/windows/50/000000/adidas-trefoil.png"/>},
+        { label: 'Jordan', icon: <img alt="" src="https://img.icons8.com/ios-filled/50/000000/air-jordan.png"/> },
+        { label: 'New balance', icon: <img alt="" src="https://logos-download.com/wp-content/uploads/2016/02/New_Balance_black_logo.png" width="50" height="40"/> },
+        { label: 'Under Armour', icon:<img alt="" src="https://logos-download.com/wp-content/uploads/2016/09/Under_Armour_logo.png" width="40" height="40"/> },
+        { label: 'Reebok', icon: <img alt="" src="https://logos-download.com/wp-content/uploads/2016/02/Reebok_logo.png" width="100" height="40"/> },
+        { label: 'Puma', icon: <img alt="" src="https://www.logosurfer.com/wp-content/uploads/2018/03/puma-logo_0.png" width="60" height="40"/> },
         { label: 'Other', icon: <More /> },
       ].map(({ label, icon }, index) => (
         <Cat label={label} icon={icon} key={index} />

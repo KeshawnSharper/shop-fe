@@ -3,53 +3,17 @@ import './Product.scss'
 import axios from "axios";
 import Header from '../header/header'
 import RelatedSneakers from './relatedSneakers'
-import { makeStyles } from '@material-ui/core/styles';
 import {addToCart} from '../../actions/actions'
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
 import Loader from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux"
 
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
-  },
-  gridList: {
-    flexWrap: 'nowrap',
-    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
-    transform: 'translateZ(0)',
-  },
-  title: {
-    color: theme.palette.primary.light,
-  },
-  titleBar: {
-    background:
-      'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
-  },
-}));
-
 function Product(props) {
     const [sneaker,setSneaker] = useState({})
-    const [relatedSneakers,setRelatedSneakers] = useState([])
     useEffect(() => {
     
         let api = `https://api.thesneakerdatabase.com/v1/sneakers/${props.match.params.id}`
         
-    //     if (props.match.params.shoe ){
-    //       let shoe = props.match.params.shoe.replace(/ /g, "%20");
-    // api += `&shoe=${shoe}`
-    //     }
-    //     if (localStorage.getItem("brand") ){
-    // api += `&brand=${localStorage.getItem("brand")}`
-    //     }
         axios
         .get(
           api,
@@ -98,7 +62,7 @@ function Product(props) {
               <div className="column-xs-12 column-md-7">
                 <div className="product-gallery">
                   <div className="product-image">
-                    <img className="active" src={sneaker.media.thumbUrl} />
+                    <img alt="" className="active" src={sneaker.media.thumbUrl} />
                   </div>
                  
                 </div>

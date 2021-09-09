@@ -8,7 +8,6 @@ export default function SignIn(props) {
        email:"",
        password:""
    })
-   const [loading,setLoading] = useState(false)
 
    const handleChange = e => {
        setUser({...user,
@@ -17,7 +16,6 @@ export default function SignIn(props) {
    }
    const handleSubmit = e => {
        e.preventDefault()
-       setLoading(true)
    Axios.post(`https://heir-shoes-be.herokuapp.com/login`,user).then(
        res => {
         localStorage.setItem(`email`,res.data.email)
@@ -25,13 +23,12 @@ export default function SignIn(props) {
         localStorage.setItem(`id`,res.data.userid)
         props.history.push(`/home`)
         console.log(props)
-        setLoading(false)
 
        }
    )
    .catch(
     err => {
-      setLoading(false)
+      console.log(err)
     }
   )
 
@@ -45,11 +42,8 @@ export default function SignIn(props) {
       <form className="form1">
         <input className="un " onChange={handleChange} name="email"type="text" align="center" placeholder="Email" />
         <input className="pass" onChange={handleChange} name="password"type="password" align="center" placeholder="Password" />
-        <a className="submit" align="center" onClick={handleSubmit}>Sign in</a>
+        <button className="submit" align="center" onClick={handleSubmit}>Sign in</button>
         <Link to="/signup"><p className="forgot" align="center">Sign Up</p></Link>
-        {/* <div className="g-signin2  btn-lg " data-onsuccess="onSignIn" data-theme="dark"></div> */}
-        {/* </a></div><a href="#">
-    </a></div> */}
     </form>
     </div>
     </div>

@@ -58,7 +58,7 @@ export default function SignUp(props) {
         <input className="un " onChange={handleChange} name="email"type="text" align="center" placeholder="Email" />
         <input className="pass" onChange={handleChange} name="user_name"type="userName" align="center" placeholder="Username" />
         <input className="pass" onChange={handleChange} name="password"type="password" align="center" placeholder="Password" />
-        <a className="submit" align="center" onClick={handleSubmit}>SignUp</a>
+        <button className="submit" align="center" onClick={handleSubmit}>SignUp</button>
         <Link to="/signin"><p className="forgot" align="center">Sign In</p></Link>
         {/* <p className="forgot" align="center"><a href="#">Forgot Password?</a></p><a href="#"> */}
         {/* <div className="g-signin2  btn-lg " data-onsuccess="onSignIn" data-theme="dark"></div> */}

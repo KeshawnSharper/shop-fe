@@ -53,7 +53,7 @@ export default function RelatedSneakers({brand}) {
           setRelatedSneakers(shoes)
           console.log(response.data.results)
         })
-    },[])
+    },[brand])
     const classes = useStyles();
     return (
         <div>

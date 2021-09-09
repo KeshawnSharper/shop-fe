@@ -1,23 +1,4 @@
 import React from 'react'
-// import ReactDOM from 'react-dom'
-// import {
-//     BrowserRouter as Router,
-//     Route,
-//     NavLink,
-//     Switch,
-//     Link,
-//     withRouter
-//   } from "react-router-dom";
-// //   import { Provider } from "./Components";
-// import Header from './components/header/header'
-// import Content from './components/content/content'
-// import Search from './components/search/search'
-// import Product from './components/Product/product'
-// import Cart from './components/Cart/cart'
-// import Orders from './components/Orders/orders'
-// import ProtectedRoute from './ProtectedRoute'
-
-// import { connect } from "react-redux";
 import './home.scss'
 import { Link } from "react-router-dom";
 
@@ -35,7 +16,7 @@ export default function Home(props) {
         <section className>
           <div className="container">
             <div className="col-3 text--center">
-              <img src="http://store.storeimages.cdn-apple.com/4044/as-images.apple.com/is/image/AppleInc/aos/published/images/H/D1/HD162/HD162?wid=800&hei=800&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1400749861094" alt="" className="details-img--ball" />
+              <img src={`http://store.storeimages.cdn-apple.com/4044/as-images.apple.com/is/image/AppleInc/aos/published/images/H/D1/HD162/HD162?wid=800&hei=800&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1400749861094`} alt="" className="details-img--ball" />
             </div>
             <div className="col-7 details">
               <h3>Product is so awesome.</h3>
@@ -107,15 +88,15 @@ export default function Home(props) {
         <section className="text--center">
           <div className="container">
             <h3>Why you still reading?</h3>
-            <a href="#" className="btn">Order yours now!</a>
+            <button className="btn">Order yours now!</button>
           </div>
         </section>
         <footer>
           <div className="container">
             <ul>
-              <li><a href="#">Impressum</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Mainpage</a></li>
+              <li><button>Impressum</button></li>
+              <li><button>Contact</button></li>
+              <li><button>Mainpage</button></li>
             </ul>
             <p>© 2014 dat Company. All rights reserved.</p>
           </div>
